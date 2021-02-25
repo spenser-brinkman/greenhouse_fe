@@ -5,7 +5,7 @@ class NewSpace extends Component {
   render(){
     return (
       <div>
-        NewSpace
+        
       </div>
     )
   }
