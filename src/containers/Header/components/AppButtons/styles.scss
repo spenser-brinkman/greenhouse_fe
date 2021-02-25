@@ -3,3 +3,68 @@
   height: 10vh;
   display: flex;
 }
+
+// #app-buttons li div {
+//   display: block;
+//   height: 4vh;
+//   cursor: pointer;
+// }
+
+#leaf-button {
+  padding: 0 2vw 0 3vw;
+  border: none;
+  position: relative;
+  vertical-align: middle;
+  height: 10vh;
+  z-index: 1000;
+  cursor: default;
+  background-color: transparent;
+  outline: none;
+}
+
+#leaf-icon {
+  cursor: pointer;
+  display: block;
+  height: 4vh;
+}
+
+.green-leaf {
+  content: url("./images/green-leaf.png");
+}
+
+.orange-leaf {
+  content: url("./images/orange-leaf.png");
+}
+
+.green-leaf:hover {
+  content: url("./images/orange-leaf.png");
+}
+
+#door-button {
+  border: none;
+  position: relative;
+  vertical-align: middle;
+  height: 10vh;
+  z-index: 1000;
+  cursor: default;
+  background-color: transparent;
+  outline: none;
+}
+
+#door-icon {
+  cursor: pointer;
+  display: block;
+  height: 4vh;
+}
+
+.green-door {
+  content: url("./images/green-door.png");
+}
+
+.orange-door {
+  content: url("./images/orange-door.png");
+}
+
+.green-door:hover {
+  content: url("./images/orange-door.png");
+}
