@@ -1,0 +1,12 @@
+#header {
+  display: flex;
+  height: 10vh;
+  user-select: none;
+}
+
+hr.line {
+  width: 100%;
+  border: none;
+  border-top: 2px solid;
+  color: lightgrey;
+}
