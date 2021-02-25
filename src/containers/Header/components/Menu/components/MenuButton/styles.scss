@@ -1,0 +1,30 @@
+#menu-button {
+  float: right;
+  padding: 0 3vw 0 0;
+  border: none;
+  position: relative;
+  vertical-align: middle;
+  height: 10vh;
+  z-index: 1000;
+  cursor: default;
+  background-color: transparent;
+  outline: none;
+}
+
+#burger-icon {
+  cursor: pointer;
+  display: block;
+  height: 4vh;
+}
+
+.green-burger {
+  content: url("./images/green-burger.png");
+}
+
+.green-burger:hover {
+  content: url("./images/orange-burger.png");
+}
+
+.orange-burger {
+  content: url("./images/orange-burger.png");
+}
