@@ -1,7 +1,7 @@
 #header {
   display: flex;
   height: 10vh;
-  user-select: none;
+  // user-select: none;
 }
 
 hr.line {
@@ -21,10 +21,11 @@ hr.line {
   height: 100vh;
   overflow: hidden;
   color: green;
-  transform: translateY(-100%);
+  transform: translateY(0);
   transition: transform 0.2s ease;
 }
 
-.showMenu {
-  transform: translateY(0);
+.hidden {
+  transform: translateY(-100%);
+  display: none;
 }
