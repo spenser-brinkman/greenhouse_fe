@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import greenDoor from '../images/green-door.png'
-import orangeDoor from '../images/orange-door.png'
+
 import { openNewSpace, closeDropdown } from '../../../../../services/actions/headerActions'
 
 class NewSpaceButton extends Component {
@@ -13,9 +12,9 @@ class NewSpaceButton extends Component {
   render(){
     return (
       <button id="door-button">
-        <image
+        <img
           tabIndex="0"
-          type="image"
+          onKeyPress={event => event.code === "Enter" ? this.toggleShowSpaceForm() : null }
           onClick={this.toggleShowSpaceForm}
           id="door-icon"
           className={this.props.doorColor === 'green' ? 'green-door' : 'orange-door'}
