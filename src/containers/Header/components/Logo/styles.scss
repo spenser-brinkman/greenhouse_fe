@@ -20,3 +20,9 @@ h1#logo {
 h1#logo span {
   font-weight: 800;
 }
+
+@media only screen and (max-width: 400px) {
+  #logo-container h1 {
+      display: none;
+  }
+}
