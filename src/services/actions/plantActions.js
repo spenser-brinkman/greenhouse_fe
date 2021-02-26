@@ -9,7 +9,7 @@ const fetchPlants = () => {
   }
 }
 
-const createPlant = (body) => {
+const createPlant = body => {
   return (dispatch) => {
     fetch(baseURL, {
       method: "POST",
