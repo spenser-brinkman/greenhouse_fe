@@ -21,7 +21,7 @@
   content: url("./images/green-burger.png");
 }
 
-.green-burger:hover {
+.green-burger:hover, .green-burger:focus {
   content: url("./images/orange-burger.png");
 }
 
