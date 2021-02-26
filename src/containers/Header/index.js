@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import AppButtons from './components/AppButtons/'
 import Logo from './components/Logo/'
 import Menu from './components/Menu/'
-import './styles.scss'
 
+import './styles.scss'
 
 class Header extends Component {
   render(){
