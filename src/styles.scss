@@ -5,3 +5,11 @@
   font-family: 'abel';
   user-select: none;
 }
+
+#vertical-line {
+  height: 89.8vh;
+  position: absolute;
+  margin: -0.1vh 0 0 30vw;
+  border-left: 2px solid;
+  color: lightgrey;
+}
