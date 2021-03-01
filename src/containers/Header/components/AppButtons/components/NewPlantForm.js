@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import { closeDropdown } from '../../../../../services/actions/headerActions'
-import { createPlant } from '../../../../../services/actions/plantActions'
+import { createPlant, fetchPlants } from '../../../../../services/actions/plantActions'
 
 const defaultState = {
   species: '',
@@ -28,6 +28,7 @@ class NewPlantForm extends Component {
     event.preventDefault();
     this.props.createPlant(this.state);
     this.setState(defaultState);
+    this.props.fetchPlants();
     this.props.closeDropdown();
   }
 
@@ -92,7 +93,8 @@ const mstp = state => {
 const mdtp = dispatch => {
   return {
     closeDropdown: () => dispatch(closeDropdown),
-    createPlant: body => dispatch(createPlant(body))
+    createPlant: body => dispatch(createPlant(body)),
+    fetchPlants: () => dispatch(fetchPlants())
   }
 }
 
