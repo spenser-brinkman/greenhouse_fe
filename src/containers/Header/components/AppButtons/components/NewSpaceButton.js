@@ -14,7 +14,7 @@ class NewSpaceButton extends Component {
       <button id="door-button">
         <img
           tabIndex="0"
-          onKeyPress={event => event.code === "Enter" ? this.toggleShowSpaceForm() : null }
+          onKeyPress={event => event.code === "Enter" && this.toggleShowSpaceForm()}
           onClick={this.toggleShowSpaceForm}
           id="door-icon"
           className={this.props.doorColor === 'green' ? 'green-door' : 'orange-door'}

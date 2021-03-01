@@ -14,7 +14,7 @@ class NewPlantButton extends Component {
       <button id="leaf-button">
         <img
           tabIndex="0"
-          onKeyPress={event => event.code === "Enter" ? this.toggleShowPlantForm() : null }
+          onKeyPress={event => event.code === "Enter" && this.toggleShowPlantForm() }
           onClick={this.toggleShowPlantForm}
           id="leaf-icon"
           className={this.props.leafColor === 'green' ? 'green-leaf' : 'orange-leaf'} 
