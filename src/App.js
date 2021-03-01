@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import Header from './containers/Header/'
-// import UnassignedPlants from './containers/UnassignedPlants/'
-// import Spaces from './containers/Spaces/'
+import UnassignedPlants from './containers/UnassignedPlants/'
+import Spaces from './containers/Spaces/'
 
 import './styles.scss'
 
@@ -13,8 +13,9 @@ class App extends Component {
     return (
       <>
         <Header />
-        {/* <UnassignedPlants /> */}
-        {/* <Spaces /> */}
+        <UnassignedPlants />
+        <div id="vertical-line" />
+        <Spaces />
       </>
     )
   }
