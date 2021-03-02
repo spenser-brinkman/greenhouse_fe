@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import { fetchPlants } from '../../services/actions/plantActions'
-import PlantCard from './components/PlantCard'
+import PlantCard from '../../components/PlantCard/'
 import './styles.scss'
 
 class UnassignedPlants extends Component {
@@ -14,8 +14,8 @@ class UnassignedPlants extends Component {
   render() {
     let plants = this.props.plants.filter(plant => plant.attributes.spaceId == null)
     return (
-      <div>
-        {plants.map(plant => <PlantCard plant={plant} />)}
+      <div className="left">
+        {plants.map(plant => <PlantCard plant={plant.attributes} key={plant.id} />)}
       </div>
     )
   }
@@ -29,7 +29,7 @@ const mstp = state => {
 
 const mdtp = dispatch => {
   return {
-    fetchPlants: () => dispatch(fetchPlants()),
+    fetchPlants: () => dispatch(fetchPlants())
   }
 }
 
