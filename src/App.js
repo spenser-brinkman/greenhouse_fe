@@ -12,11 +12,9 @@ class App extends Component {
     return (
       <>
         <Header />
-        <div className="content">
-          <UnassignedPlants />
-          <div id="vertical-line" />
-          <Spaces />
-        </div>
+        <UnassignedPlants />
+        <div id="vertical-line" />
+        <Spaces />
       </>
     )
   }
