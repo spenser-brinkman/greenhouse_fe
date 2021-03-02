@@ -9,7 +9,7 @@ const fetchSpaces = () => {
   }
 }
 
-const createSpace = (body) => {
+const createSpace = body => {
   return (dispatch) => {
     fetch(baseURL, {
       method: "POST",

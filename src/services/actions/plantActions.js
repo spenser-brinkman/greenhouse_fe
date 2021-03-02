@@ -1,7 +1,7 @@
 const baseURL = "http://localhost:3001/plants/"
 
 const fetchPlants = () => {
-  return (dispatch) => {
+  return dispatch => {
     dispatch({type: "LOADING_PLANTS"})
     fetch(baseURL)
     .then(response => response.json())
@@ -10,7 +10,7 @@ const fetchPlants = () => {
 }
 
 const createPlant = body => {
-  return (dispatch) => {
+  return dispatch => {
     fetch(baseURL, {
       method: "POST",
       headers: {
@@ -29,7 +29,7 @@ const createPlant = body => {
 
 
 const editPlant = ({id, name, humidity, light}) => {
-  return (dispatch) => {
+  return dispatch => {
     fetch(baseURL + id, {
       method: "PUT",
       headers: {
@@ -49,7 +49,7 @@ const editPlant = ({id, name, humidity, light}) => {
 }
 
 const deletePlant = ({id}) => {
-  return (dispatch) => {
+  return dispatch => {
     fetch(baseURL + id, {
       method: "DELETE",
       headers: {
