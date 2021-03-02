@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
 
 import AppButtons from './components/AppButtons/'
 import Logo from './components/Logo/'
