@@ -18,6 +18,7 @@ class NewSpaceButton extends Component {
           onClick={this.toggleShowSpaceForm}
           id="door-icon"
           className={this.props.doorColor === 'green' ? 'green-door' : 'orange-door'}
+          alt="Button To Add Space"
         />
       </button>
     )
