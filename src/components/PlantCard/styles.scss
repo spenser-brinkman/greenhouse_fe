@@ -11,9 +11,15 @@
   margin: 10px;
 }
 
-.plant p {
+.closed {
   text-decoration: underline;
   color: darkgreen;
+}
+
+
+.open, .closed:hover {
+  color: darkorange;
+  text-decoration: underline;
 }
 
 .plant li {

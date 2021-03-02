@@ -1,4 +1,11 @@
-.card_title {
+.space-card {
+  flex: 50%;
+  max-width: 50%;
+  padding: 2vh 2vw;
+  box-sizing: border-box;
+}
+
+.card-title {
   white-space: nowrap;
   font-size: 1.5rem;
   font-weight: 700;
