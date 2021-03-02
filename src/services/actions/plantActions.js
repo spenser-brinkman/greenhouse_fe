@@ -5,7 +5,7 @@ const fetchPlants = () => {
     dispatch({type: "LOADING_PLANTS"})
     fetch(baseURL)
     .then(response => response.json())
-    .then(JSON => dispatch({type: "FETCH_PLANTS", payload: {data: JSON}}))
+    .then(JSON => dispatch({type: "FETCH_PLANTS", payload: {data: JSON.data}}))
   }
 }
 
@@ -21,7 +21,9 @@ const createPlant = body => {
         plant: body
       })
     })
-    .then(json => dispatch({type: "CREATE_PLANT", payload: json}))
+    .then(resp => resp.json())
+    // .then(fetchPlants)
+    // .then(json => dispatch({type: "CREATE_PLANT", payload: body}))
   }
 }
 

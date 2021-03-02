@@ -5,7 +5,7 @@ const fetchSpaces = () => {
     dispatch({type: "LOADING_SPACES"})
     fetch(baseURL)
     .then(response => response.json())
-    .then(JSON => dispatch({type: "FETCH_SPACES", payload: {data: JSON}}))
+    .then(JSON => dispatch({type: "FETCH_SPACES", payload: {data: JSON.data}}))
   }
 }
 
@@ -21,7 +21,8 @@ const createSpace = (body) => {
         space: body
       })
     })
-    .then(json => dispatch({type: "CREATE_SPACE", payload: json}))
+    .then(resp => resp.json())
+    // .then(json => dispatch({type: "CREATE_SPACE", payload: json}))
   }
 }
 
