@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import Login from './components/Login/'
 // import Signup from './components/Signup/'
-import About from './components/About'
+// import About from './components/About'
 
 import './styles.scss'
 
