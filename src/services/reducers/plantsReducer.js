@@ -21,7 +21,7 @@ function plantsReducer(state = { data: [], loading: false }, action) {
     case "CREATE_PLANT":
       return {
         ...state,
-        data: [...state.data, action.payload.plant]
+        data: [...state.data, action.payload]
       }
       
     case "EDIT_PLANT":
