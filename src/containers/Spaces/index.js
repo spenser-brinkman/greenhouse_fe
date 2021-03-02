@@ -13,15 +13,11 @@ class Spaces extends Component {
   }
 
   render() {
-    
-    console.log(this.props);
-    console.log('*');
-    console.log('*');
-    console.log('*');
-    console.log('*');
     return (
-      <div className="right">
-        {this.props.spaces.map(space => <SpaceCard space={space.attributes} key={space.id} />)}
+      <div className="content right">
+        <div className="centered">
+          {this.props.spaces.map(space => <SpaceCard space={space.attributes} key={space.id} />)}
+        </div>
       </div>
     )
   }
