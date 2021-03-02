@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-class PlantCard extends Component {
-  
-  render() {
+import '../styles.scss'
+
+class PlantInfo extends Component {
+
+  state = {
+    open: false
+  }
+
+  handleClick = () => {
+    this.setState({
+      open: !this.state.open
+    })
+  }
+
+  plantDetails = () => {
     let plant = this.props.plant
-    return(
+    return (
       <>
         <li>Light: {plant.lightReq}</li>
         <li>Humidity: {plant.humidityReq}</li>
@@ -14,6 +26,15 @@ class PlantCard extends Component {
         <li>Last Fertilized: {plant.lastFert}</li>
         <li>Comments: {plant.comments}</li>
       </>
+    )
+  }
+
+  render() {
+    return(
+      <ul className="plant">
+        <p className={this.state.open ? "open" : "closed"} onClick={this.handleClick}>{this.props.plant.species}</p>
+        {this.state.open && this.plantDetails()}
+      </ul>
     )
   }
 }
@@ -30,4 +51,4 @@ const mdtp = dispatch => {
   }
 }
 
-export default PlantCard
+export default PlantInfo
