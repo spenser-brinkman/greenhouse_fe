@@ -13,6 +13,7 @@ class MenuButton extends Component {
           onClick={this.props.onClick}
           id="burger-icon"
           className={this.props.color === 'green' ? 'green-burger' : 'orange-burger'} 
+          alt="Button To Open Menu"
         />
       </button>
     )
