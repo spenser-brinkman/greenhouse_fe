@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
 
 import Header from './containers/Header/'
 import UnassignedPlants from './containers/UnassignedPlants/'
@@ -13,9 +12,11 @@ class App extends Component {
     return (
       <>
         <Header />
-        <UnassignedPlants />
-        <div id="vertical-line" />
-        <Spaces />
+        <div className="content">
+          <UnassignedPlants />
+          <div id="vertical-line" />
+          <Spaces />
+        </div>
       </>
     )
   }
