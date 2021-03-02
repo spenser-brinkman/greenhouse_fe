@@ -1,0 +1,22 @@
+
+.plant-card {
+  flex: 100%;
+  padding: 2vh 2vw;
+  box-sizing: border-box;
+}
+
+.plant {
+  font-weight: 600;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.plant p {
+  text-decoration: underline;
+  color: darkgreen;
+}
+
+.plant li {
+  cursor: default;
+  font-weight: 400;
+}

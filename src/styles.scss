@@ -7,9 +7,34 @@
 }
 
 #vertical-line {
-  height: 89.8vh;
+  height: 89vh;
   position: absolute;
-  margin: -0.1vh 0 0 30vw;
+  margin: 0 0 0 30vw;
   border-left: 2px solid;
   color: lightgrey;
+}
+
+.content {
+  height: 89vh;
+  position: fixed;
+  z-index: 1;
+  top: 10;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  align-items: flex-start;
+}
+
+.holder {
+  border: solid 10px;
+  border-image: linear-gradient(45deg,green,lightgrey) 1;
+  box-shadow: 2px 2px 10px;
+}
+
+.card-content {
+  white-space: nowrap;
+  padding: 1rem;
 }
