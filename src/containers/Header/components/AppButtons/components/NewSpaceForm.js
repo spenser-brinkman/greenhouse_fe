@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import { closeDropdown } from '../../../../../services/actions/headerActions'
-import { createSpace } from '../../../../../services/actions/spaceActions'
+import { createSpace, fetchSpaces } from '../../../../../services/actions/spaceActions'
 
 const defaultState = {
   name: '',
@@ -23,6 +23,7 @@ class NewSpaceForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.createSpace(this.state);
+    this.props.fetchSpaces();
     this.setState(defaultState);
     this.props.closeDropdown();
   }
@@ -68,7 +69,8 @@ const mstp = state => {
 const mdtp = dispatch => {
   return {
     closeDropdown: () => dispatch(closeDropdown),
-    createSpace: body => dispatch(createSpace(body))
+    createSpace: body => dispatch(createSpace(body)),
+    fetchSpaces: () => dispatch(fetchSpaces())
   }
 }
 
