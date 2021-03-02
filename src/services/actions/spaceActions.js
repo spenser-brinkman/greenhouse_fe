@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3001/spaces/"
+const baseURL = (process.env.NODE_ENV === 'production' ? "https://morning-falls-14110.herokuapp.com/spaces/" : "http://localhost:3001/spaces/")
 
 const fetchSpaces = () => {
   return (dispatch) => {
