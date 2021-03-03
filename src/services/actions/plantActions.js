@@ -1,4 +1,4 @@
-const baseURL = (process.env.NODE_ENV === 'production' ? "https://greenhouse-js.herokuapp.com/plants/" : "http://localhost:3001/plants/")
+const baseURL = (process.env.NODE_ENV === 'production' ? "https://greenhouse-rb.herokuapp.com/plants/" : "http://localhost:3001/plants/")
 
 const fetchPlants = () => {
   return dispatch => {
