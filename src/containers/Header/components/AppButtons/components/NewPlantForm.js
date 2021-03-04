@@ -28,7 +28,6 @@ class NewPlantForm extends Component {
     event.preventDefault();
     this.props.createPlant(this.state);
     this.setState(defaultState);
-    // this.props.fetchPlants();
     this.props.closeDropdown();
   }
 
