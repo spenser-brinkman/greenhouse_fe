@@ -9,6 +9,7 @@
   font-weight: 600;
   cursor: pointer;
   margin: 10px;
+  max-width: 100%;
 }
 
 .closed {
@@ -25,4 +26,6 @@
 .plant li {
   cursor: default;
   font-weight: 400;
+  max-width: 100%;
+  white-space: normal;
 }
