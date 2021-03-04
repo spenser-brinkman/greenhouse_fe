@@ -3,7 +3,27 @@
   padding: 0;
   list-style: none;
   font-family: 'abel';
-  user-select: none;
+  // user-select: none;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: lightgrey; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darkgrey; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
 }
 
 #vertical-line {
