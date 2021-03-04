@@ -25,14 +25,24 @@ function plantsReducer(state = { data: [], loading: false }, action) {
       }
       
     case "EDIT_PLANT":
+      idx = state.data.findIndex(plant => plant.attributes.id === action.payload.id)
       return {
-
+        ...state,
+        data: [
+          ...state.data.slice(0, idx),
+          action.payload,
+          ...state.data.slice(idx + 1)
+        ]
       }
 
     case "DELETE_PLANT":
-      idx = state.findIndex(plant => plant.id === action.id)
+      idx = state.data.findIndex(plant => plant.attributes.id === action.payload.id)
       return {
-
+        ...state,
+        data: [
+          ...state.data.slice(0, idx),
+          ...state.data.slice(idx + 1)
+        ]
       }
 
     default:

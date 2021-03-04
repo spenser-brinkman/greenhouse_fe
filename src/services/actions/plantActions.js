@@ -5,7 +5,7 @@ const fetchPlants = () => {
     dispatch({type: "LOADING_PLANTS"})
     fetch(baseURL)
     .then(response => response.json())
-    .then(JSON => dispatch({type: "FETCH_PLANTS", payload: {data: JSON.data}}))
+    .then(json => dispatch({type: "FETCH_PLANTS", payload: {data: json.data}}))
   }
 }
 
@@ -22,13 +22,12 @@ const createPlant = body => {
       })
     })
     .then(resp => resp.json())
-    // .then(fetchPlants)
-    // .then(json => dispatch({type: "CREATE_PLANT", payload: body}))
+    .then(json => dispatch({type: "CREATE_PLANT", payload: json.data}))
   }
 }
 
 
-const editPlant = ({id, name, humidity, light}) => {
+const editPlant = ({id, species, lightReq, humidityReq, waterFreq, lastWater, lastFert, comments, spaceId}) => {
   return dispatch => {
     fetch(baseURL + id, {
       method: "PUT",
@@ -38,17 +37,23 @@ const editPlant = ({id, name, humidity, light}) => {
       },
       body: JSON.stringify({
         plant: {
-          name,
-          humidity,
-          light
+          species,
+          lightReq,
+          humidityReq,
+          waterFreq,
+          lastWater,
+          lastFert,
+          comments,
+          spaceId
         }
       })
     })
-    .then(json => dispatch({type: "EDIT_PLANT", payload: json}))
+    .then(resp => resp.json())
+    .then(json => dispatch({type: "EDIT_PLANT", payload: json.data}))
   }
 }
 
-const deletePlant = ({id}) => {
+const deletePlant = id => {
   return dispatch => {
     fetch(baseURL + id, {
       method: "DELETE",
@@ -57,7 +62,7 @@ const deletePlant = ({id}) => {
         Accept: "application/json"
       }
     })
-    .then(json => dispatch({type: "DELETE_PLANT", payload: json}))
+    .then(() => dispatch({type: "DELETE_PLANT", payload: {id}}))
   }
 }
 
