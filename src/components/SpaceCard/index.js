@@ -9,6 +9,11 @@ import './styles.scss'
 
 class SpaceCard extends Component {
 
+  state = {
+    spaceOpen: false,
+    spaceEditorOpen: false
+  }
+
   drop = event => {
     event.preventDefault();
     const plant = JSON.parse(event.dataTransfer.getData("plant"))
@@ -20,16 +25,35 @@ class SpaceCard extends Component {
     event.preventDefault();
   }
 
+  toggleDetails = () => {
+    this.setState({
+      spaceOpen: !this.state.spaceOpen,
+      spaceEditorOpen: false
+    })
+  }
+
+  toggleEditForm = () => {
+    this.setState({
+      spaceEditorOpen: !this.state.spaceEditorOpen
+    })
+  }
+  
+  spaceDetails = () => {
+    return (
+      <p>
+        Light: <span style={{fontWeight: 600}}>{this.props.space.light}</span>
+        &nbsp;| Humidity: <span style={{fontWeight: 600}}>{this.props.space.humidity}</span>
+      </p>
+    )
+  }
+
   render() {
     let space = this.props.space
     return (
       <div className="space-card" onDrop={this.drop} onDragOver={this.dragOver}>
         <div className="holder card-content">
-          <h2 className="card-title">{this.props.space.name}</h2>
-          <p>
-            Light: <span style={{fontWeight: 600}}>{space.light}</span>
-            &nbsp;| Humidity: <span style={{fontWeight: 600}}>{space.humidity}</span>
-          </p>
+          <h2 className={this.state.spaceOpen ? "open card-title" : "closed card-title"} onClick={this.toggleDetails}>{this.props.space.name}</h2>
+          {this.state.spaceOpen && this.spaceDetails()}
           <div>
             {this.props.plants.map(plant => plant.attributes.spaceId === space.id && <PlantInfo key={plant.attributes.id} plant={plant.attributes} />)}
           </div>
