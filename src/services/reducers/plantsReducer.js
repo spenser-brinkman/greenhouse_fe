@@ -25,7 +25,7 @@ function plantsReducer(state = { data: [], loading: false }, action) {
       }
       
     case "EDIT_PLANT":
-      idx = state.data.findIndex(plant => plant.attributes.id === action.payload.id)
+      idx = state.data.findIndex(plant => plant.id === action.payload.id)
       return {
         ...state,
         data: [
