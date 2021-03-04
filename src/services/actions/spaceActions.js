@@ -1,16 +1,16 @@
 const baseURL = (process.env.NODE_ENV === 'production' ? "https://greenhouse-rb.herokuapp.com/spaces/" : "http://localhost:3001/spaces/")
 
 const fetchSpaces = () => {
-  return (dispatch) => {
+  return dispatch => {
     dispatch({type: "LOADING_SPACES"})
     fetch(baseURL)
     .then(response => response.json())
-    .then(JSON => dispatch({type: "FETCH_SPACES", payload: {data: JSON.data}}))
+    .then(json => dispatch({type: "FETCH_SPACES", payload: {data: json.data}}))
   }
 }
 
 const createSpace = body => {
-  return (dispatch) => {
+  return dispatch => {
     fetch(baseURL, {
       method: "POST",
       headers: {
@@ -22,13 +22,13 @@ const createSpace = body => {
       })
     })
     .then(resp => resp.json())
-    // .then(json => dispatch({type: "CREATE_SPACE", payload: json}))
+    .then(json => dispatch({type: "CREATE_SPACE", payload: json.data}))
   }
 }
 
 
 const editSpace = ({id, name, humidity, light}) => {
-  return (dispatch) => {
+  return dispatch => {
     fetch(baseURL + id, {
       method: "PUT",
       headers: {
@@ -48,7 +48,7 @@ const editSpace = ({id, name, humidity, light}) => {
 }
 
 const deleteSpace = ({id}) => {
-  return (dispatch) => {
+  return dispatch => {
     fetch(baseURL + id, {
       method: "DELETE",
       headers: {
