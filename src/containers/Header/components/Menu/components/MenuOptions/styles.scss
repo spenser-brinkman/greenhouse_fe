@@ -12,7 +12,7 @@
   padding: 0 0 5vh 0;
 }
 
-.menu ul li button {
+.menu ul li a {
   background-color: transparent;
   border: none;
   color: green;
@@ -22,7 +22,7 @@
   cursor: pointer;
 }
 
-.menu ul li button:hover, .menu ul li button:focus {
+.menu ul li a:hover, .menu ul li a:focus {
   border-bottom: 2px solid transparent;
   color: orange;
 }
