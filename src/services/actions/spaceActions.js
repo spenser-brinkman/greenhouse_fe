@@ -43,11 +43,12 @@ const editSpace = ({id, name, humidity, light}) => {
         }
       })
     })
-    .then(json => dispatch({type: "EDIT_SPACE", payload: json}))
+    .then(resp => resp.json())
+    .then(json => dispatch({type: "EDIT_SPACE", payload: json.data}))
   }
 }
 
-const deleteSpace = ({id}) => {
+const deleteSpace = (id, plants = []) => {
   return dispatch => {
     fetch(baseURL + id, {
       method: "DELETE",
@@ -56,7 +57,10 @@ const deleteSpace = ({id}) => {
         Accept: "application/json"
       }
     })
-    .then(json => dispatch({type: "DELETE_SPACE", payload: json}))
+    .then(() => {
+      plants.map(plant => dispatch({type: "EDIT_PLANT", payload: plant}))
+      dispatch({type: "DELETE_SPACE", payload: {id}})
+    })
   }
 }
 
