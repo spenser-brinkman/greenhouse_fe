@@ -1,7 +1,6 @@
 #header {
   display: flex;
   height: 10vh;
-  // user-select: none;
 }
 
 hr.line {
@@ -23,6 +22,65 @@ hr.line {
   color: green;
   transform: translateY(0);
   transition: transform 0.2s ease;
+}
+
+.dropdown-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-form h2 {
+  color: darkgreen;
+}
+
+.dropdown-form label {
+  width: 40vw;
+  color: darkgreen;
+  text-decoration: none;
+  font-size: clamp(1rem, 2vh, 3rem);
+  font-weight: bold;
+  text-align: center;
+}
+
+.dropdown-form input {
+  border: green solid;
+  box-sizing: border-box;
+  outline: 0;
+  padding: 0vh 0.5vw;
+  margin: 0.5vh 0 3vh 0;
+  position: relative;
+  height: 4vh;
+  width: 35vw;
+  font-size: 1em;
+  text-align: center;
+}
+
+.dropdown-form input[type=submit] {
+  width: 15vw;
+  margin: 3vh 0 0 0;
+  background-color: transparent;
+}
+
+.dropdown-form input:focus {
+  border: orange solid;
+  outline: none;
+}
+
+.dropdown-form input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
 }
 
 .hidden {
