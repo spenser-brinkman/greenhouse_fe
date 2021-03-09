@@ -8,9 +8,9 @@ import '../styles.scss'
 class PlantInfo extends Component {
 
   state = {
-    open: false,
-    editorOpen: false,
-    editFields: {
+    plantOpen: false,
+    plantEditorOpen: false,
+    plantEditFields: {
       id: this.props.plant.id,
       species: this.props.plant.species,
       lightReq: this.props.plant.lightReq,
@@ -34,14 +34,14 @@ class PlantInfo extends Component {
 
   toggleDetails = () => {
     this.setState({
-      open: !this.state.open,
-      editorOpen: false
+      plantOpen: !this.state.plantOpen,
+      plantEditorOpen: false
     })
   }
 
   toggleEditForm = () => {
     this.setState({
-      editorOpen: !this.state.editorOpen
+      plantEditorOpen: !this.state.plantEditorOpen
     })
   }
 
@@ -62,13 +62,13 @@ class PlantInfo extends Component {
 
   handleFieldChange = event => {
     this.setState({
-      editFields: {...this.state.editFields, [event.target.name]: event.target.value}
+      plantEditFields: {...this.state.plantEditFields, [event.target.name]: event.target.value}
     }, () => console.log(this.state))
   }
 
   submitEditPlant = event => {
     event.preventDefault();
-    this.props.editPlant(this.state.editFields);
+    this.props.editPlant(this.state.plantEditFields);
     this.toggleEditForm()
   }
 
@@ -80,12 +80,12 @@ class PlantInfo extends Component {
   editPlantForm = () => {
     return (
       <form onSubmit={this.submitEditPlant}>
-        <li>Light Requirement: <input type="text" name="lightReq" value={this.state.editFields.lightReq} onChange={this.handleFieldChange} /></li>
-        <li>Humidity Requirement: <input type="text" name="humidityReq" value={this.state.editFields.humidityReq} onChange={this.handleFieldChange} /></li>
-        <li>Watering Frequency: <input type="text" name="waterFreq" value={this.state.editFields.waterFreq} onChange={this.handleFieldChange} /></li>
-        <li>Date Last Watered: <input type="date" name="lastWater" value={this.state.editFields.lastWater} onChange={this.handleFieldChange} /></li>
-        <li>Date Last Fertilized: <input type="date" name="lastFert" value={this.state.editFields.lastFert} onChange={this.handleFieldChange} /></li>
-        <li>Comments: <input type="text" name="comments" value={this.state.editFields.comments} onChange={this.handleFieldChange} /></li>
+        <li>Light Requirement: <input type="text" name="lightReq" value={this.state.plantEditFields.lightReq} onChange={this.handleFieldChange} /></li>
+        <li>Humidity Requirement: <input type="text" name="humidityReq" value={this.state.plantEditFields.humidityReq} onChange={this.handleFieldChange} /></li>
+        <li>Watering Frequency: <input type="text" name="waterFreq" value={this.state.plantEditFields.waterFreq} onChange={this.handleFieldChange} /></li>
+        <li>Date Last Watered: <input type="date" name="lastWater" value={this.state.plantEditFields.lastWater} onChange={this.handleFieldChange} /></li>
+        <li>Date Last Fertilized: <input type="date" name="lastFert" value={this.state.plantEditFields.lastFert} onChange={this.handleFieldChange} /></li>
+        <li>Comments: <input type="text" name="comments" value={this.state.plantEditFields.comments} onChange={this.handleFieldChange} /></li>
         <li>
           <input type="submit" value="Submit" />
           <button onClick={this.deletePlant}>Delete</button>
@@ -103,9 +103,9 @@ class PlantInfo extends Component {
         onDragOver={this.dragOver}
         draggable="true"
       >
-        <p className={this.state.open ? "open" : "closed"} onClick={this.toggleDetails}>{this.props.plant.species}</p>
-        {this.state.open && !this.state.editorOpen && this.plantDetails()}
-        {this.state.editorOpen && this.editPlantForm()}
+        <p className={this.state.plantOpen ? "open" : "closed"} onClick={this.toggleDetails}>{this.props.plant.species}</p>
+        {this.state.plantOpen && !this.state.plantEditorOpen && this.plantDetails()}
+        {this.state.plantEditorOpen && this.editPlantForm()}
       </ul>
     )
   }
