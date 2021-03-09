@@ -63,7 +63,7 @@ class PlantInfo extends Component {
   handleFieldChange = event => {
     this.setState({
       plantEditFields: {...this.state.plantEditFields, [event.target.name]: event.target.value}
-    }, () => console.log(this.state))
+    })
   }
 
   submitEditPlant = event => {
