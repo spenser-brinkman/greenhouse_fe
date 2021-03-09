@@ -21,18 +21,28 @@ function spacesReducer(state = { data: [], loading: false }, action) {
     case "CREATE_SPACE":
       return {
         ...state,
-        data: [...state.data, action.payload.space]
+        data: [...state.data, action.payload]
       }
       
     case "EDIT_SPACE":
+      idx = state.data.findIndex(space => space.id === action.payload.id)
       return {
-
+        ...state,
+        data: [
+          ...state.data.slice(0, idx),
+          action.payload,
+          ...state.data.slice(idx + 1)
+        ]
       }
 
     case "DELETE_SPACE":
-      idx = state.findIndex(space => space.id === action.id)
+      idx = state.data.findIndex(space => space.attributes.id === action.payload.id)
       return {
-
+        ...state,
+        data: [
+          ...state.data.slice(0, idx),
+          ...state.data.slice(idx + 1)
+        ]
       }
 
     default:
