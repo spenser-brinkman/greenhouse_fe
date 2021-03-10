@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import { fetchPlants, editPlant } from '../../services/actions/plantActions'
+import { editPlant } from '../../services/actions/plantActions'
 import PlantCard from '../../components/PlantCard/'
 
 import './styles.scss'
 
 class UnassignedPlants extends Component {
-
-  componentDidMount(){
-    this.props.fetchPlants()
-  }
 
   drop = event => {
     event.preventDefault();
@@ -43,7 +39,6 @@ const mstp = state => {
 
 const mdtp = dispatch => {
   return {
-    fetchPlants: () => dispatch(fetchPlants()),
     editPlant: plant => dispatch(editPlant(plant))
   }
 }

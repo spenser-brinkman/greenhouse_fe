@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import { fetchSpaces } from '../../services/actions/spaceActions'
 import SpaceCard from '../../components/SpaceCard/'
 
 import './styles.scss'
@@ -25,10 +24,4 @@ const mstp = state => {
   }
 }
 
-const mdtp = dispatch => {
-  return {
-    fetchSpaces: () => dispatch(fetchSpaces())
-  }
-}
-
-export default connect(mstp, mdtp)(Spaces)
+export default connect(mstp)(Spaces)
