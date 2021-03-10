@@ -17,6 +17,10 @@ class App extends Component {
     this.fetchEverything()   
   }
 
+  componentDidUpdate(){
+    this.fetchEverything()
+  }
+
   fetchEverything = () =>{
     this.props.fetchLoggedInUser()
     this.props.fetchSpaces()
@@ -37,7 +41,7 @@ class App extends Component {
 
 const mstp = state => {
   return {
-
+    user: state.user
   }
 }
 
@@ -49,4 +53,4 @@ const mdtp = dispatch => {
   }
 }
 
-export default connect(null, mdtp)(App);
+export default connect(mstp, mdtp)(App);
