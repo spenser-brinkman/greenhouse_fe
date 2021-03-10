@@ -88,6 +88,8 @@ const logout = () => {
   return dispatch => {
     localStorage.removeItem('token')
     dispatch({type: 'LOGOUT'})
+    dispatch({type: 'CLEAR_SPACES'})
+    dispatch({type: 'CLEAR_PLANTS'})
   }
 }
 

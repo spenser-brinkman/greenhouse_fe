@@ -11,7 +11,12 @@ function userReducer(state = {loggedIn: false, username: '', id: '', jwt: ''}, a
       }
 
     case 'LOGOUT':
-      return state
+      return {
+        loggedIn: false,
+        username: '',
+        id: '',
+        jwt: ''
+      }
 
     default:
       return state

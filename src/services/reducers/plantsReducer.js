@@ -4,27 +4,27 @@ function plantsReducer(state = { data: [], loading: false }, action) {
 
   switch (action.type) {
 
-    case "LOADING_PLANTS":
+    case 'LOADING_PLANTS':
       return {
         ...state,
         data: [...state.data],
         loading: true
       }
 
-    case "FETCH_PLANTS":
+    case 'FETCH_PLANTS':
       return {
         ...state,
         data: action.payload.data,
         loading: false
       }
 
-    case "CREATE_PLANT":
+    case 'CREATE_PLANT':
       return {
         ...state,
         data: [...state.data, action.payload]
       }
       
-    case "EDIT_PLANT":
+    case 'EDIT_PLANT':
       idx = state.data.findIndex(plant => plant.id === action.payload.id)
       return {
         ...state,
@@ -35,7 +35,7 @@ function plantsReducer(state = { data: [], loading: false }, action) {
         ]
       }
 
-    case "DELETE_PLANT":
+    case 'DELETE_PLANT':
       idx = state.data.findIndex(plant => plant.attributes.id === action.payload.id)
       return {
         ...state,
@@ -43,6 +43,12 @@ function plantsReducer(state = { data: [], loading: false }, action) {
           ...state.data.slice(0, idx),
           ...state.data.slice(idx + 1)
         ]
+      }
+
+    case 'CLEAR_PLANTS':
+      return {
+        data: [],
+        loading: false
       }
 
     default:
