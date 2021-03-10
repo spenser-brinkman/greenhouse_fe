@@ -8,10 +8,6 @@ import './styles.scss'
 
 class Spaces extends Component {
 
-  componentDidMount(){
-    this.props.fetchSpaces()
-  }
-
   render() {
     return (
       <div className="content right">
