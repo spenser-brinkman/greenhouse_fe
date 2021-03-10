@@ -10,7 +10,7 @@ function headerReducer(
 
   switch (action.type) {
 
-    case "OPEN_NEW_PLANT":
+    case 'OPEN_NEW_PLANT':
       return {
         leafColor: 'orange',
         doorColor: 'green',
@@ -20,7 +20,7 @@ function headerReducer(
         showMenu: false
       }
 
-    case "OPEN_NEW_SPACE":
+    case 'OPEN_NEW_SPACE':
       return {
         leafColor: 'green',
         doorColor: 'orange',
@@ -30,7 +30,7 @@ function headerReducer(
         showMenu: false
       }
 
-    case "OPEN_MENU":
+    case 'OPEN_MENU':
       return {
         leafColor: 'green',
         doorColor: 'green',
@@ -40,7 +40,7 @@ function headerReducer(
         showMenu: true
       }
 
-    case "CLOSE_DROPDOWN":
+    case 'CLOSE_DROPDOWN':
       return {
         leafColor: 'green',
         doorColor: 'green',
