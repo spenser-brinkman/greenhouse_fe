@@ -10,8 +10,6 @@ import './styles.scss'
 
 class SpaceCard extends Component {
 
-  space = this.props.space
-
   plants = this.props.plants.filter(plant => plant.attributes.spaceId === this.props.space.id)
 
   state = {
@@ -28,7 +26,7 @@ class SpaceCard extends Component {
   drop = event => {
     event.preventDefault();
     const plant = JSON.parse(event.dataTransfer.getData("plant"))
-    plant.spaceId = this.space.id
+    plant.spaceId = this.props.space.id
     this.props.editPlant(plant)
   }
 
@@ -48,13 +46,13 @@ class SpaceCard extends Component {
       spaceEditorOpen: !this.state.spaceEditorOpen
     })
   }
-  
+
   spaceDetails = () => {
     return (
       <>
         <p>
-          Light: <span style={{fontWeight: 600}}>{this.space.light}</span>
-          &nbsp;| Humidity: <span style={{fontWeight: 600}}>{this.space.humidity}</span>
+          Light: <span style={{ fontWeight: 600 }}>{this.props.space.light}</span>
+          &nbsp;| Humidity: <span style={{ fontWeight: 600 }}>{this.props.space.humidity}</span>
         </p>
         <button onClick={this.toggleEditForm}>Edit Space</button>
       </>
@@ -63,7 +61,7 @@ class SpaceCard extends Component {
 
   handleFieldChange = event => {
     this.setState({
-      spaceEditFields: {...this.state.spaceEditFields, [event.target.name]: event.target.value}
+      spaceEditFields: { ...this.state.spaceEditFields, [event.target.name]: event.target.value }
     })
   }
 
@@ -76,7 +74,7 @@ class SpaceCard extends Component {
   deleteSpace = event => {
     event.preventDefault();
     this.plants.map(plant => plant.attributes.spaceId = null && this.props.editPlant(plant))
-    this.props.deleteSpace(this.space.id, this.plants)
+    this.props.deleteSpace(this.props.space.id, this.plants)
   }
 
   editSpaceForm = () => {
@@ -98,7 +96,7 @@ class SpaceCard extends Component {
     return (
       <div className="space-card" onDrop={this.drop} onDragOver={this.dragOver}>
         <div className="holder card-content">
-          <h2 className={this.state.spaceOpen ? "open card-title" : "closed card-title"} onClick={this.toggleDetails}>{this.space.name}</h2>
+          <h2 className={this.state.spaceOpen ? "open card-title" : "closed card-title"} onClick={this.toggleDetails}>{this.props.space.name}</h2>
           {this.state.spaceOpen && this.spaceDetails()}
           {this.state.spaceEditorOpen && this.editSpaceForm()}
           <div>
@@ -112,7 +110,8 @@ class SpaceCard extends Component {
 
 const mstp = state => {
   return {
-    plants: state.plants.data
+    plants: state.plants.data,
+    spaces: state.spaces.data
   }
 }
 
