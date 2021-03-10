@@ -1,13 +1,17 @@
-function userReducer(state = {username: '', id: '', jwt: ''}, action) {
+function userReducer(state = {loggedIn: false, username: '', id: '', jwt: ''}, action) {
 
   switch (action.type) {
 
-    case "LOGIN":
+    case 'LOGIN':
       return {
+        loggedIn: true,
         username: action.payload.user.data.attributes.username,
         id: action.payload.user.data.attributes.id,
         jwt: action.payload.jwt
       }
+
+    case 'LOGOUT':
+      return state
 
     default:
       return state
