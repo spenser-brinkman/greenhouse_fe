@@ -14,6 +14,7 @@ class MenuOptions extends Component {
 
   handleLogout = () => {
     this.props.logout()
+    this.props.onClick()
   }
 
   render(){
@@ -21,8 +22,13 @@ class MenuOptions extends Component {
         <div className={this.props.showMenu ? "menu" : "menu hidden"}>
           <ul>
             <Route exact path="/menu">
-              {!localStorage.token ? <li><NavLink className="menuLink" to="/menu/login" >Log In</NavLink></li> : <li><a className="menuLink" onClick={this.handleLogout} >Log Out</a></li>}
-              <li><NavLink className="menuLink" to="/menu/signup">Sign Up</NavLink></li>
+              {localStorage.token
+                ? <li><NavLink className="menuLink" to="/" onClick={this.handleLogout} >Log Out</NavLink></li>
+                : <>
+                    <li><NavLink className="menuLink" to="/menu/login" >Log In</NavLink></li>
+                    <li><NavLink className="menuLink" to="/menu/signup">Sign Up</NavLink></li>
+                  </>
+              }
               <li><NavLink className="menuLink" to="/menu/about">About</NavLink></li>
             </Route>
             <Route path="/menu/login" component={Login} />

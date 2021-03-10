@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux'
+import { closeDropdown } from '../../../../../../../services/actions/headerActions'
 
 import { login } from '../../../../../../../services/actions/userActions'
 
@@ -20,6 +21,7 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault()
     this.props.login(this.state)
+    this.props.closeMenu()
   }
 
   render(){
@@ -50,7 +52,8 @@ const mstp = state => {
 
 const mdtp = dispatch => {
   return {
-    login: user => dispatch(login(user))
+    login: user => dispatch(login(user)),
+    closeMenu: () => dispatch(closeDropdown)
   }
 }
 
