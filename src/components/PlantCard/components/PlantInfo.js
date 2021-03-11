@@ -65,8 +65,11 @@ class PlantInfo extends Component {
 
     return (
       <>
-        <li style={lightColor}>Light: {plant.lightReq}</li>
-        <li style={humidityColor}>Humidity: {plant.humidityReq}</li>
+        <li>
+          <span style={lightColor}>Light: <span style={{fontWeight: 'bold'}}>{plant.lightReq}</span></span>
+          &nbsp;|&nbsp;
+          <span style={humidityColor}>Humidity: <span style={{fontWeight: 'bold'}}>{plant.humidityReq}</span></span>
+        </li>
         <li>Water Every {plant.waterFreq} Days</li>
         <li>Last Watered: {plant.lastWater}</li>
         <li>Last Fertilized: {plant.lastFert}</li>
