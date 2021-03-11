@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { closeDropdown } from '../../../../../../../services/actions/headerActions'
 
@@ -21,6 +21,7 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault()
     this.props.login(this.state)
+    this.props.history.push("/")
     this.props.closeMenu()
   }
 
@@ -30,15 +31,17 @@ class Login extends Component {
         <form className="dropdown-form" onSubmit={this.handleSubmit}>
 
           <h3>Username:</h3>
-          <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+          <input required type="text" name="username" value={this.state.username} onChange={this.handleChange} />
 
           <h3>Password:</h3>
-          <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+          <input required type="password" name="password" value={this.state.password} onChange={this.handleChange} />
 
           <input type="submit" value="Log In" />
-        </form>
 
-        <NavLink to="/menu" />
+          <Link to="/menu">
+            <input type="submit" value="Go Back" />
+          </Link>
+        </form>
       </>
     )
   }
