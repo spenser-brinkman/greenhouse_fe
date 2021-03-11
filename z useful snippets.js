@@ -14,3 +14,5 @@ const mdtp = dispatch => {
 
   }
 }
+
+window.location.pathname
