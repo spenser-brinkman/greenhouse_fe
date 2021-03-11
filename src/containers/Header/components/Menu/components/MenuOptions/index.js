@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux'
 
 import { logout } from '../../../../../../services/actions/userActions'
@@ -19,10 +19,11 @@ class MenuOptions extends Component {
 
   render(){
     return (
-        <div className={this.props.showMenu ? "menu" : "menu hidden"}>
-          <ul>
+      <div className="menu">
+        <ul>
+          <Switch>
             <Route exact path="/menu">
-              {localStorage.token
+              {this.props.user.loggedIn
                 ? <li><NavLink className="menuLink" to="/" onClick={this.handleLogout} >Log Out</NavLink></li>
                 : <>
                     <li><NavLink className="menuLink" to="/menu/login" >Log In</NavLink></li>
@@ -34,8 +35,9 @@ class MenuOptions extends Component {
             <Route path="/menu/login" component={Login} />
             <Route path="/menu/signup" component={Signup} />
             <Route path="/menu/about" component={About} />
-          </ul>
-        </div>
+          </Switch>
+        </ul>
+      </div>
     )
   }
 }
