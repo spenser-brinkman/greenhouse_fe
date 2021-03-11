@@ -47,10 +47,25 @@ class PlantInfo extends Component {
 
   plantDetails = () => {
     let plant = this.props.plant
+    let lightColor = {color: "black"}
+    let humidityColor = {color: "black"}
+    let space = plant.spaceId ? this.props.space.filter(space => space.id == this.props.plant.spaceId)[0].attributes : null
+    
+    if (space) {
+      let lightDiff = Math.abs(plant.lightReq - space.light)
+      let humidityDiff = Math.abs(plant.humidityReq - space.humidity)
+      lightDiff <= 1 && (lightColor = {color: "green"})
+      lightDiff > 1 && lightDiff < 3 && (lightColor = {color: "orange"})
+      lightDiff > 4  && (lightColor = {color: "red"})
+      humidityDiff <= 1 && (humidityColor = {color: "green"})
+      humidityDiff > 1 && humidityDiff < 3 && (humidityColor = {color: "orange"})
+      humidityDiff > 4 && (humidityColor = {color: "red"})
+    }
+
     return (
       <>
-        <li>Light: {plant.lightReq}</li>
-        <li>Humidity: {plant.humidityReq}</li>
+        <li style={lightColor}>Light: {plant.lightReq}</li>
+        <li style={humidityColor}>Humidity: {plant.humidityReq}</li>
         <li>Water Every {plant.waterFreq} Days</li>
         <li>Last Watered: {plant.lastWater}</li>
         <li>Last Fertilized: {plant.lastFert}</li>
@@ -113,7 +128,7 @@ class PlantInfo extends Component {
 
 const mstp = state => {
   return {
-
+    space: state.spaces.data
   }
 }
 
@@ -124,4 +139,4 @@ const mdtp = dispatch => {
   }
 }
 
-export default connect(null, mdtp)(PlantInfo)
+export default connect(mstp, mdtp)(PlantInfo)
