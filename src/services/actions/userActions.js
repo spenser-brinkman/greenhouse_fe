@@ -52,7 +52,7 @@ const login = user => {
         alert(json.error)
       } else {
         localStorage.setItem('token', json.jwt)
-        dispatch({type: 'LOGIN', payload: json})
+        dispatch({type: 'LOGIN', payload: json.user.data.attributes})
       }
     })
   }

@@ -8,21 +8,20 @@ import { fetchLoggedInUser } from './services/actions/userActions';
 import { fetchSpaces } from './services/actions/spaceActions'
 import { fetchPlants } from './services/actions/plantActions'
 
-
 import './styles.scss'
 
 class App extends Component {
 
   componentDidMount(){
-    this.fetchEverything()   
+    this.props.fetchLoggedInUser()
+    this.fetchEverything()
   }
 
   componentDidUpdate(){
     this.fetchEverything()
   }
 
-  fetchEverything = () =>{
-    this.props.fetchLoggedInUser()
+  fetchEverything = () => {
     this.props.fetchSpaces()
     this.props.fetchPlants()
   }
@@ -47,7 +46,7 @@ const mstp = state => {
 
 const mdtp = dispatch => {
   return {
-    fetchLoggedInUser: () => dispatch(fetchLoggedInUser),
+    fetchLoggedInUser: () => dispatch(fetchLoggedInUser()),
     fetchSpaces: () => dispatch(fetchSpaces()),
     fetchPlants: () => dispatch(fetchPlants())
   }
