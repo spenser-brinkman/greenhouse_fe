@@ -11,7 +11,9 @@ class Spaces extends Component {
     return (
       <div className="content right">
         <div className="centered">
-          {this.props.spaces.map(space => <SpaceCard space={space.attributes} key={space.id} />)}
+          {!this.props.user.loggedIn
+          ? 'You are not logged in!'
+          : this.props.spaces.map(space => <SpaceCard space={space.attributes} key={space.id} />)}
         </div>
       </div>
     )
@@ -20,7 +22,8 @@ class Spaces extends Component {
 
 const mstp = state => {
   return {
-    spaces: state.spaces.data
+    spaces: state.spaces.data,
+    user: state.user
   }
 }
 
