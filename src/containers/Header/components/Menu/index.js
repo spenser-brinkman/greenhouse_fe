@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Route } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
+import { Route } from 'react-router-dom';
 
 import { openMenu, closeDropdown } from '../../../../services/actions/headerActions'
 
@@ -19,9 +19,9 @@ class Menu extends Component {
   render(){
     return (
       <Router>
-        <div id="menu-container">
+        <div id='menu-container'>
           <MenuButton onClick={this.toggleMenu} color={this.props.burgerColor} />
-          <Route path="/menu" >
+          <Route path='/menu' >
             <MenuOptions onClick={this.toggleMenu} showMenu={this.props.showMenu} />
           </Route>
         </div>

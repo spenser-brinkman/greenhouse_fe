@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { openNewPlant, closeDropdown } from '../../../../../services/actions/headerActions'
+import { openNewPlant, closeDropdown } from '../../../../../services/actions/headerActions';
 
 class NewPlantButton extends Component {
 
@@ -12,14 +13,16 @@ class NewPlantButton extends Component {
   render(){
     return (
       <button id="leaf-button">
-        <img
-          tabIndex="0"
-          onKeyPress={event => event.code === "Enter" && this.toggleShowPlantForm() }
-          onClick={this.toggleShowPlantForm}
-          id="leaf-icon"
-          className={this.props.leafColor === 'green' ? 'green-leaf' : 'orange-leaf'}
-          alt="Button To Add Plant"
-        />
+        <Link to={this.props.showPlantForm ? '/' : '/new-plant'}>
+          <img
+            tabIndex="0"
+            onKeyPress={event => event.code === "Enter" && this.toggleShowPlantForm() }
+            onClick={this.toggleShowPlantForm}
+            id="leaf-icon"
+            className={this.props.leafColor === 'green' ? 'green-leaf' : 'orange-leaf'}
+            alt="Button To Add Plant"
+          />
+        </Link>
       </button>
     )
   }
