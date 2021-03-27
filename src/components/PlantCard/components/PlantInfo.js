@@ -56,10 +56,10 @@ class PlantInfo extends Component {
       let humidityDiff = Math.abs(plant.humidityReq - space.humidity)
       lightDiff <= 1 && (lightColor = {color: "green"})
       lightDiff > 1 && lightDiff <= 3 && (lightColor = {color: "orange"})
-      lightDiff > 4  && (lightColor = {color: "red"})
+      lightDiff >= 4  && (lightColor = {color: "red"})
       humidityDiff <= 1 && (humidityColor = {color: "green"})
       humidityDiff > 1 && humidityDiff <= 3 && (humidityColor = {color: "orange"})
-      humidityDiff > 4 && (humidityColor = {color: "red"})
+      humidityDiff >= 4 && (humidityColor = {color: "red"})
       console.log(lightDiff, humidityDiff)
     }
 
