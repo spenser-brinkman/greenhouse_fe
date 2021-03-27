@@ -7,6 +7,7 @@ This application gives plant-moms and -dads the ability to better provide their 
 ![Drag and drop GIF](https://media.giphy.com/media/4Az1YhPwbCSMfZt8rj/giphy.gif)
 
 ### Video Demo
+[Vimeo Greenhouse Video](https://vimeo.com/529540343)
 
 ### Snippet Blog
 [Dev.to post about drag & drop basics](https://dev.to/spenser6131/react-js-drag-drop-2ne9)
