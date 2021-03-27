@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom';
 
 import SpaceCard from '../../components/SpaceCard/'
 
@@ -12,7 +13,7 @@ class Spaces extends Component {
       <div className="content right">
         <div className="centered">
           {!this.props.user.loggedIn
-          ? 'You are not logged in!'
+          ? <Link to='/menu/login'>You are not logged in!</Link>
           : this.props.spaces.map(space => <SpaceCard space={space.attributes} key={space.id} />)}
         </div>
       </div>
