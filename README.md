@@ -13,7 +13,7 @@ This application gives plant-moms and -dads the ability to better provide their 
 ### Video Demo
 [Vimeo Greenhouse Video](https://vimeo.com/529540343)
 
-###[Snippet Blog](https://dev.to/spenser6131/react-js-drag-drop-2ne9)
+### Snippet Blog
 [Dev.to post about drag & drop basics](https://dev.to/spenser6131/react-js-drag-drop-2ne9)
 
 Check out the backend repo [here](https://github.com/spenser6131/greenhouse-v2-backend)
