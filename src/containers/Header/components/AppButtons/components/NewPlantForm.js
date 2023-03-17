@@ -40,22 +40,22 @@ class NewPlantForm extends Component {
           <br />
           
           <h3>Species:</h3>
-          <input type="text" name="species" value={this.state.species} onChange={this.handleChange} />
+          <input required type="text" name="species" value={this.state.species} onChange={this.handleChange} />
         
           <h3>Light Requirement (1-5):</h3>
-          <input type="text" name="lightReq" value={this.state.lightReq} onChange={this.handleChange} />
+          <input required type="text" name="lightReq" value={this.state.lightReq} onChange={this.handleChange} />
         
           <h3>Humidity Requirement (1-5):</h3>
-          <input type="text" name="humidityReq" value={this.state.humidityReq} onChange={this.handleChange} />
+          <input required type="text" name="humidityReq" value={this.state.humidityReq} onChange={this.handleChange} />
         
           <h3>Watering Frequency (every "__" days):</h3>
-          <input type="text" name="waterFreq" value={this.state.waterFreq} onChange={this.handleChange} />
+          <input required type="text" name="waterFreq" value={this.state.waterFreq} onChange={this.handleChange} />
         
           <h3>Date Last Watered:</h3>
-          <input type="date" name="lastWater" value={this.state.lastWater} onChange={this.handleChange} />
+          <input required type="date" name="lastWater" value={this.state.lastWater} onChange={this.handleChange} />
         
           <h3>Date Last Fertilized:</h3>
-          <input type="date" name="lastFert" value={this.state.lastFert} onChange={this.handleChange} />
+          <input required type="date" name="lastFert" value={this.state.lastFert} onChange={this.handleChange} />
         
           <h3>Comments:</h3>
           <input type="text" name="comments" value={this.state.comments} onChange={this.handleChange} />
