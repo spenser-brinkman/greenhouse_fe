@@ -13,7 +13,7 @@ class Spaces extends Component {
       <div className="content right">
         <div className="centered">
           {!this.props.user.loggedIn
-          ? <Link to='/menu/login'>You are not logged in!</Link>
+          ? <Link class="loginPrompt" to="/menu/login">You are not logged in!</Link>
           : this.props.spaces.map(space => <SpaceCard space={space.attributes} key={space.id} />)}
         </div>
       </div>
