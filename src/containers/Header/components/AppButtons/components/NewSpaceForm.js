@@ -37,13 +37,13 @@ class NewSpaceForm extends Component {
           <br />
 
           <h3>Name:</h3>
-          <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
+          <input required type="text" name="name" value={this.state.name} onChange={this.handleChange} />
         
           <h3>Light Level (1-5):</h3>
-          <input type="text" name="light" value={this.state.light} onChange={this.handleChange} />
+          <input required type="text" name="light" value={this.state.light} onChange={this.handleChange} />
         
           <h3>Humidity Level (1-5):</h3>
-          <input type="text" name="humidity" value={this.state.humidity} onChange={this.handleChange} />
+          <input required type="text" name="humidity" value={this.state.humidity} onChange={this.handleChange} />
 
           <input type="submit" value="Create" onChange={this.handleChange} />
         </form>
