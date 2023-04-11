@@ -13,7 +13,7 @@ class AppButtons extends Component {
   render(){
     return (
       <div id="app-buttons">
-        <Router>
+        <Router basename="/greenhouse">
           <NewPlantButton />
           <Route path='/new-plant'>
             <NewPlantForm />

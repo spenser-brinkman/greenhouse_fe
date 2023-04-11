@@ -10,7 +10,7 @@ const store = configureStore()
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <Router basename="/greenhouse">
       <App />
     </Router>
   </Provider>,

@@ -18,7 +18,7 @@ class Menu extends Component {
 
   render(){
     return (
-      <Router>
+      <Router basename="/greenhouse">
         <div id='menu-container'>
           <MenuButton onClick={this.toggleMenu} color={this.props.burgerColor} />
           <Route path='/menu' >
