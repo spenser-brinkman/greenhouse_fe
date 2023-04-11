@@ -1,9 +1,10 @@
 {
   "name": "greenhouse_fe",
-  "version": "0.1.0",
+  "version": "1.1.0",
+  "homepage": "https://www.spenserbrinkman.com/greenhouse",
   "private": true,
   "engines": {
-    "node": "15.2.1"
+    "node": "18.15.0"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
