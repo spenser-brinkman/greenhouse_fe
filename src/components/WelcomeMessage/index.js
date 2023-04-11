@@ -14,7 +14,7 @@ class WelcomeMessage extends Component {
           Welcome to Green<strong>House</strong>!
         </h1>
         <p>
-          Thanks for taking the time to check out my projects! Please note that this is a rudimentary application that I created early on in my web development journey. While I have learned a lot since building this app, it is not a fully polished product and contains known bugs. I share this project purely as a demonstration of fundamental competency in React.js, rather than as an example of mastery. Thank you for visiting!
+          Thanks for taking the time to check out my work! Please note that this is a rudimentary application that I created early on in my web development journey. While I have learned a lot since building this app, it is not a polished product and contains several known bugs. I share this project purely as a demonstration of fundamental competency in React.js, rather than as an example of mastery. Thank you for visiting!
         </p>
         <button class="dismiss" onClick={this.dismissMessage.bind(this)}>Dismiss</button>
       </div>
