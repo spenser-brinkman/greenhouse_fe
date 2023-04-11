@@ -1,8 +1,8 @@
 // const baseURL = 'http://localhost:3001/spaces/'
 
-// const baseURL = 'https://greenhouse-rb.herokuapp.com/spaces/'
+// const baseURL = 'https://www.spenserbrinkman.com/greenhouse/api/spaces/'
 
-const baseURL = (process.env.NODE_ENV === 'production' ? 'https://greenhouse-rb.herokuapp.com/spaces/' : 'http://localhost:3001/spaces/')
+const baseURL = (process.env.NODE_ENV === 'production' ? 'https://www.spenserbrinkman.com/greenhouse/api/spaces/' : 'http://localhost:3001/spaces/')
 
 const fetchSpaces = () => {
   return dispatch => {

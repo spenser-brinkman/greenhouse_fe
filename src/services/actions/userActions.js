@@ -2,13 +2,13 @@
 // const loginURL = 'http://localhost:3001/login'
 // const autoLoginURL = 'http://localhost:3001/auto-login'
 
-// const signupURL = 'https://greenhouse-rb.herokuapp.com/signup'
-// const loginURL = 'https://greenhouse-rb.herokuapp.com/login'
-// const autoLoginURL = 'https://greenhouse-rb.herokuapp.com/auto-login'
+// const signupURL = 'https://www.spenserbrinkman.com/greenhouse/api/signup'
+// const loginURL = 'https://www.spenserbrinkman.com/greenhouse/api/login'
+// const autoLoginURL = 'https://www.spenserbrinkman.com/greenhouse/api/auto-login'
 
-const signupURL = (process.env.NODE_ENV === 'production' ? 'https://greenhouse-rb.herokuapp.com/signup' : 'http://localhost:3001/signup')
-const loginURL = (process.env.NODE_ENV === 'production' ? 'https://greenhouse-rb.herokuapp.com/login' : 'http://localhost:3001/login')
-const autoLoginURL = (process.env.NODE_ENV === 'production' ? 'https://greenhouse-rb.herokuapp.com/auto-login' : 'http://localhost:3001/auto-login')
+const signupURL = (process.env.NODE_ENV === 'production' ? 'https://www.spenserbrinkman.com/greenhouse/api/signup' : 'http://localhost:3001/signup')
+const loginURL = (process.env.NODE_ENV === 'production' ? 'https://www.spenserbrinkman.com/greenhouse/api/login' : 'http://localhost:3001/login')
+const autoLoginURL = (process.env.NODE_ENV === 'production' ? 'https://www.spenserbrinkman.com/greenhouse/api/auto-login' : 'http://localhost:3001/auto-login')
 
 const signup = user => {
   return dispatch => {
